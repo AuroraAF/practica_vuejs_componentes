@@ -43,22 +43,22 @@
         <script type="text/x-template" id="itemData">
             <div class="card">
                 <div class="card-body" v-show="datos">
-                    <dl v-for="d in i.data" :itemData="d">
+                    <dl v-for="d in item.data">
                         <dt> {{ d.prompt}} </dt>
                         <dd> {{ d.value }} </dd>
                     </dl>
-                    <a v-bind:href="i.href" class="btn btn-primary" role="button">Ver</a>
+                    <a :href="item.href" class="btn btn-primary" role="button">Ver</a>
                     <button class="btn btn-secondary" v-on:click="toggleEditFormVisibility">Editar</button>
                 </div>
 
                 <div>
                     <div class="card-body" v-show="edit">
-                        <dl v-for="d in i.data" :itemData="d">
+                        <dl v-for="d in item.data">
                             <dd> {{ d.prompt}} </dd>
                             <input v-if="d.prompt != 'Description'" v-model="d.value" type="text">
                             <textarea v-else v-model="d.value" type="text"></textarea>
                         </dl>
-                        <button class="btn btn-primary" v-on:click="formClosed">Cerrar</button>
+                        <button class="btn btn-primary" v-on:click="formClose">Cerrar</button>
                     </div>
                 </div>
             </div>

@@ -62,7 +62,7 @@ Vue.component('item-data', {
             edit: false
         }   
     },
-    props : ["i"],
+    props : ["item"],
     methods: {
         toggleEditFormVisibility(){
             this.datos = false;
